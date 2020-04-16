@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>getWeight</string>
+  <key>nodeid</key><string>5d5d9346-8524-4215-b548-53e7d36c6e75</string>
+  <key>modified_time</key><integer>1587063741</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1587063529</integer>
+  <key>order</key><integer>4</integer>
+</dict>
+</node>

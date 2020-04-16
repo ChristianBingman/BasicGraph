@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>NumEdges</string>
+  <key>nodeid</key><string>434e1c39-d927-4a7d-8256-43063775b0bb</string>
+  <key>modified_time</key><integer>1587063321</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1587063165</integer>
+  <key>order</key><integer>2</integer>
+</dict>
+</node>
