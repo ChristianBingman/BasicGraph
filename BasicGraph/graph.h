@@ -1,12 +1,12 @@
 /*graph.h*/
 
 //
-// Name?
-// University?
-// Class?
-// Semester?
+// Christian Bingman
+// University of Illinois at chicago
+// CS 251
+// Spring 2020
 //
-// Overview?
+// Class for managing Vertices and Weighted Edges
 //
 
 #pragma once
