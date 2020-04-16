@@ -32,7 +32,22 @@ private:
       EdgeExists = false;  // initially no edge, and no weight
     }
   };
-
+    
+  //
+  // _LookupVertex
+  //
+  // Returns the index if found or -1
+  //
+    int _LookupVertex(VertexT v) const{
+        for (int i = 0; i < this->NumVertices(); ++i)
+        {
+          if (this->Vertices[i] == v)  // already in the graph:
+            return i;
+        }
+        
+        return -1;
+    }
+    
   //
   // We are using adjacency matrix implementation, where rows
   // are the starting vertex and cols are the ending vertex.
@@ -118,11 +133,9 @@ public:
     // is the vertex already in the graph?  If so, we do not 
     // insert again otherwise Vertices may fill with duplicates:
     //
-    for (int i = 0; i < this->NumVertices(); ++i)
-    {
-      if (this->Vertices[i] == v)  // already in the graph:
-        return false;
-    }
+      if(_LookupVertex(v) != -1){
+          return false;
+      }
     
     //
     // if we get here, vertex does not exist so insert.  Where
@@ -154,13 +167,11 @@ public:
     int row = -1;
 
     // from vertex => row of adjacency matrix:
-    for (int i = 0; i < this->NumVertices(); ++i)
+    int vertFind = _LookupVertex(from);
+
+    if (vertFind != -1)  // found it:
     {
-      if (this->Vertices[i] == from)  // found it:
-      {
-        row = i;
-        break;
-      }
+      row = vertFind;
     }
 
     if (row < 0)  // not found:
@@ -210,13 +221,11 @@ public:
     int row = -1;
 
     // from vertex => row of adjacency matrix:
-    for (int i = 0; i < this->NumVertices(); ++i)
+    int vertFind = _LookupVertex(from);
+
+    if (vertFind != -1)  // found it:
     {
-      if (this->Vertices[i] == from)  // found it:
-      {
-        row = i;
-        break;
-      }
+      row = vertFind;
     }
 
     if (row < 0)  // not found:
@@ -225,13 +234,11 @@ public:
     int col = -1;
 
     // to vertex => col of adjacency matrix:
-    for (int i = 0; i < this->NumVertices(); ++i)
+    vertFind = _LookupVertex(to);
+
+    if (vertFind != -1)  // found it:
     {
-      if (this->Vertices[i] == to)  // found it:
-      {
-        col = i;
-        break;
-      }
+      col = vertFind;
     }
 
     if (col < 0)  // not found:
@@ -268,14 +275,12 @@ public:
     // matrix:
     //
     int row = -1;
+      
+    int vertFind = _LookupVertex(v);
 
-    for (int i = 0; i < this->NumVertices(); ++i)
+    if (vertFind != -1)  // found it:
     {
-      if (this->Vertices[i] == v)  // found it:
-      {
-        row = i;
-        break;
-      }
+      row = vertFind;
     }
 
     if (row < 0)  // not found:
